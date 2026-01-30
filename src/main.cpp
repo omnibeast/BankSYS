@@ -6,7 +6,32 @@ using namespace std;
 // Function Prototypes
 int getMenuChoice();
 
+void displayBalance(double balance) {
+    // Display the current balance
+	cout << "Current balance: $" << balance << endl;
+}
 
+void  depositByValue(double balance, double amount) {
+    balance += amount;
+    cout << "Deposited $" << amount << " (by value). New balance inside function: $" << balance << endl;
+}
+void depositByReference(double &balance, double amount) {
+    balance += amount;
+    cout << "Deposited $" << amount << " (by reference). New balance inside function: $" << balance << endl;
+}
+bool withdrawByReference (double &balance, double amount) {
+    bool x;
+    if (balance <  amount){
+        cout << "You dont have enough balance. your bala" << balance << endl;
+        x = 0;
+    }
+    else {
+        balance -= amount;
+        cout << "Withdraw Sucessful. New balance" << balance << endl;
+        x = 1;
+    }
+    return x;
+}
 // Driver 
 // ** DO NOT MODIFY **
 int main()
